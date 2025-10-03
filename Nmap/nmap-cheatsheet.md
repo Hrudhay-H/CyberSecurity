@@ -113,16 +113,6 @@ sudo nmap -p- -sV --script vuln 192.168.1.10
 
 ---
 
-## Suggested evidence filenames (drop into `evidences/`)
-- `evidences/nmap_quicksweep.png` — `-sn` output screenshot  
-- `evidences/nmap_basic.png` — default scan output  
-- `evidences/nmap_allports.png` — `-p-` summary  
-- `evidences/nmap_service_version.png` — `-sV` output  
-- `evidences/nmap_aggressive.png` — `-A` output  
-- `evidences/nmap_report.nmap` / `.xml` / `.gnmap` — from `-oA target_report`
-
----
-
 ## Quick legal & operational checklist — tell it like it is
 - **Get written permission.** Scope, IPs, time window. No exceptions.  
 - **Use lab targets** (localhost, isolated VMs, Metasploitable, etc.).  
@@ -131,17 +121,4 @@ sudo nmap -p- -sV --script vuln 192.168.1.10
 
 ---
 
-## Example — polite, thorough scan (drop into your pipeline)
-```bash
-# polite deep scan: full port, version detection, safe NSE, save outputs
-sudo nmap -p- -sV --script "default and safe" -T4 -oA evidence/nmap_target_report 10.0.2.15
-```
-Change `10.0.2.15` to your lab VM IP. Use `evidence/` path to keep outputs organized for REPORT.md.
 
----
-
-If you want, I’ll:
-- Save this as `nmap-cheatsheet.md` and auto-commit it to your repo, or  
-- Generate a ready-to-run `scan_and_capture.sh` that runs a polite scan and places results into `evidences/`.  
-
-Which one, Boss?
